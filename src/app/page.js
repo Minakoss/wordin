@@ -60,7 +60,7 @@ export default function Home() {
       >
         <button
           onClick={toggleMenu}
-          className="absolute top-5 right-5 text-white text-2xl focus:outline-none"
+          className="absolute top-5 right-7 text-white text-4xl focus:outline-none"
         >
           ✕
         </button>
