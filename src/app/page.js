@@ -10,7 +10,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-purple-400 relative">
+    <div className="min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-purple-400 relative flex flex-col">
       {/* Navbar with Hamburger */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         <div className="text-3xl font-bold text-black font-playfair">
@@ -33,10 +33,10 @@ export default function Home() {
       </nav>
 
       {/*Οριζόντια Γραμμή */}
-      <hr className="border-t-2 border-black z-10" />
+      <hr className="border-t-1 border-black z-10" />
 
       {/* Wrapper για το περιεχόμενο */}
-      <main className="max-w-screen-xl mx-auto px-4 z-10">
+      <main className="max-w-screen-xl mx-auto px-4 z-10 flex-grow">
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center text-center min-h-[80vh]">
           <h1 className="text-6xl font-playfair font-bold text-black leading-tight">
@@ -51,6 +51,16 @@ export default function Home() {
           </p>
         </section>
       </main>
+
+      {/* Horizontal line for footer */}
+      <hr className="border-t-1 border-black" />
+
+      {/* Footer Section */}
+      <footer className="p-4 text-center bg-transparent">
+        <p className="text-black font-playfair">
+          © 2024 Wordin. All rights reserved.
+        </p>
+      </footer>
 
       {/* Fullscreen Menu hampuger */}
       <div
