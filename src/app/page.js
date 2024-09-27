@@ -1,46 +1,86 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div
-      className="min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/typewriter-pattern.png')", // Βάλε το pattern από την εικόνα
-        backgroundAttachment: "fixed",
-      }}
-    >
-      {/* Navbar */}
-      <nav className="bg-white bg-opacity-80 p-4 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="text-black text-2xl font-serif font-bold">Wordin</div>
-          <div>
-            <a href="#" className="text-gray-700 hover:text-black mx-4">
-              Home
-            </a>
-            <a href="#about" className="text-gray-700 hover:text-black mx-4">
-              About
-            </a>
-            <a href="#projects" className="text-gray-700 hover:text-black mx-4">
-              Projects
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-black mx-4">
-              Contact
-            </a>
-          </div>
+    <div className="min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-purple-400">
+      {/* Navbar with Hamburger */}
+      <nav className="p-6 flex justify-between items-center bg-transparent">
+        <div className="text-3xl font-bold text-black font-playfair">
+          Wordin
+        </div>
+        <div className="relative">
+          <button
+            onClick={toggleMenu}
+            className="text-black focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            {/* Hamburger Icon */}
+            <div className="space-y-2">
+              <span className="block w-8 h-0.5 bg-black"></span>
+              <span className="block w-8 h-0.5 bg-black"></span>
+              <span className="block w-8 h-0.5 bg-black"></span>
+            </div>
+          </button>
+
+          {/* Dropdown Menu */}
+          {isOpen && (
+            <div className="absolute right-0 mt-4 bg-white shadow-lg rounded-lg py-2">
+              <a
+                href="#"
+                className="block px-6 py-2 text-black hover:bg-gray-200 font-playfair"
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                className="block px-6 py-2 text-black hover:bg-gray-200 font-playfair"
+              >
+                About
+              </a>
+              <a
+                href="#projects"
+                className="block px-6 py-2 text-black hover:bg-gray-200 font-playfair"
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                className="block px-6 py-2 text-black hover:bg-gray-200 font-playfair"
+              >
+                Contact
+              </a>
+            </div>
+          )}
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header className="flex flex-col items-center justify-center text-center py-32 bg-white bg-opacity-70">
-        <h1 className="text-4xl text-black font-serif font-bold">WordΙn</h1>
-        <p className="mt-4 text-xl text-gray-700">
-          Ανακαλύψτε τη δουλειά και τα projects που αναλαμβάνω ως αρθρογράφος.
-        </p>
-        <a
-          href="#projects"
-          className="mt-6 bg-black text-white px-6 py-2 rounded-lg shadow-md hover:bg-gray-800"
-        >
-          Δείτε τα Projects
-        </a>
-      </header>
+      {/* Μαύρη Οριζόντια Γραμμή */}
+      <hr className="border-t-2 border-black" />
+
+      {/* Wrapper για το περιεχόμενο */}
+      <main className="max-w-screen-xl mx-auto px-4">
+        {/* Hero Section */}
+        <section className="flex flex-col items-center justify-center text-center min-h-[80vh]">
+          <h1 className="text-6xl font-playfair font-bold text-black leading-tight">
+            Plain language,
+            <br />
+            Extraordinary results
+          </h1>
+          <hr className="border-t border-black my-6 w-1/2" />
+          <p className="text-xl font-light text-black max-w-2xl font-playfair">
+            We specialize in creative, clear, and cohesive communications
+            solutions that build memorable, impactful content.
+          </p>
+        </section>
+      </main>
     </div>
   );
 }
