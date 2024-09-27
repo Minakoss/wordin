@@ -10,9 +10,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-purple-400">
+    <div className="min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-purple-400 relative">
       {/* Navbar with Hamburger */}
-      <nav className="p-6 flex justify-between items-center bg-transparent">
+      <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         <div className="text-3xl font-bold text-black font-playfair">
           Wordin
         </div>
@@ -29,44 +29,14 @@ export default function Home() {
               <span className="block w-8 h-0.5 bg-black"></span>
             </div>
           </button>
-
-          {/* Dropdown Menu */}
-          {isOpen && (
-            <div className="absolute right-0 mt-4 bg-white shadow-lg rounded-lg py-2">
-              <a
-                href="#"
-                className="block px-6 py-2 text-black hover:bg-gray-200 font-playfair"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="block px-6 py-2 text-black hover:bg-gray-200 font-playfair"
-              >
-                About
-              </a>
-              <a
-                href="#projects"
-                className="block px-6 py-2 text-black hover:bg-gray-200 font-playfair"
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                className="block px-6 py-2 text-black hover:bg-gray-200 font-playfair"
-              >
-                Contact
-              </a>
-            </div>
-          )}
         </div>
       </nav>
 
-      {/* Μαύρη Οριζόντια Γραμμή */}
-      <hr className="border-t-2 border-black" />
+      {/*Οριζόντια Γραμμή */}
+      <hr className="border-t-2 border-black z-10" />
 
       {/* Wrapper για το περιεχόμενο */}
-      <main className="max-w-screen-xl mx-auto px-4">
+      <main className="max-w-screen-xl mx-auto px-4 z-10">
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center text-center min-h-[80vh]">
           <h1 className="text-6xl font-playfair font-bold text-black leading-tight">
@@ -81,6 +51,46 @@ export default function Home() {
           </p>
         </section>
       </main>
+
+      {/* Fullscreen Menu hampuger */}
+      <div
+        className={`fixed inset-0 bg-black text-white flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <button
+          onClick={toggleMenu}
+          className="absolute top-5 right-5 text-white text-2xl focus:outline-none"
+        >
+          ✕
+        </button>
+        <ul className="space-y-6 text-2xl">
+          <li>
+            <a href="#" className="hover:underline" onClick={toggleMenu}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about" className="hover:underline" onClick={toggleMenu}>
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              className="hover:underline"
+              onClick={toggleMenu}
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="hover:underline" onClick={toggleMenu}>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
