@@ -32,10 +32,10 @@ export default function Home() {
         </div>
       </nav>
 
-      {/*Οριζόντια Γραμμή */}
+      {/* Horizontal Line */}
       <hr className="border-t-1 border-black z-10" />
 
-      {/* Wrapper για το περιεχόμενο */}
+      {/* Wrapper for the content */}
       <main className="max-w-screen-xl mx-auto px-4 z-10 flex-grow">
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center text-center min-h-[80vh]">
@@ -49,6 +49,36 @@ export default function Home() {
             We specialize in creative, clear, and cohesive communications
             solutions that build memorable, impactful content.
           </p>
+
+          {/* Mailing List Section */}
+          <div className="mt-8 w-full max-w-lg">
+            <p className="text-xl font-light text-black font-playfair mb-2">
+              Mailing List
+            </p>
+            <div className="flex border border-black bg-transparent">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="p-4 w-full border-none focus:outline-none bg-transparent text-black"
+              />
+              <button className="p-4 border-l border-black bg-transparent">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="w-6 h-6 text-black"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </section>
       </main>
 
@@ -62,7 +92,7 @@ export default function Home() {
         </p>
       </footer>
 
-      {/* Fullscreen Menu hampuger */}
+      {/* Fullscreen Menu hamburger */}
       <div
         className={`fixed inset-0 bg-black text-white flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
