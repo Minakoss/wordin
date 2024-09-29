@@ -10,7 +10,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-purple-400 relative flex flex-col">
+    <div className="min-h-screen bg-gradient-to-r from-orange-400 via-white to-green-400 relative flex flex-col">
       {/* Navbar with Hamburger */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         <div className="text-3xl font-bold text-black font-playfair">
@@ -111,7 +111,11 @@ export default function Home() {
             </a>
           </li>
           <li>
-            <a href="#about" className="hover:underline" onClick={toggleMenu}>
+            <a
+              href="/about.js"
+              className="hover:underline"
+              onClick={toggleMenu}
+            >
               About
             </a>
           </li>
