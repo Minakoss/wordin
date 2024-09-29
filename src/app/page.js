@@ -37,25 +37,14 @@ export default function Home() {
 
       {/* Wrapper for the content */}
       <main className="max-w-screen-xl mx-auto px-4 z-10 flex-grow">
-        {/* Hero Section */}
-        <section className="flex flex-col items-center justify-center text-center min-h-[80vh]">
-          <h1 className="text-6xl font-playfair font-bold text-black leading-tight">
-            Plain language,
-            <br />
-            Extraordinary results
-          </h1>
-          <hr className="border-t border-black my-6 w-1/2" />
-          <p className="text-xl font-light text-black max-w-2xl font-playfair">
-            We specialize in creative, clear, and cohesive communications
-            solutions that build memorable, impactful content.
-          </p>
-
-          {/* Mailing List Section */}
-          <div className="mt-8 w-full max-w-lg">
+        {/* Section with grid layout */}
+        <section className="grid grid-cols-2 gap-8 min-h-[80vh]">
+          {/* Left Side - Mailing List */}
+          <div className="flex flex-col justify-center">
             <p className="text-xl font-light text-black font-playfair mb-2">
               Mailing List
             </p>
-            <div className="flex border border-black bg-transparent">
+            <div className="flex border border-black bg-transparent w-3/4">
               <input
                 type="email"
                 placeholder="Your email"
@@ -78,6 +67,20 @@ export default function Home() {
                 </svg>
               </button>
             </div>
+          </div>
+
+          {/* Right Side - Text Content */}
+          <div className="flex flex-col justify-center">
+            <h1 className="text-6xl font-playfair font-bold text-black leading-tight">
+              Plain language,
+              <br />
+              Extraordinary results
+            </h1>
+            <hr className="border-t border-black my-6 w-1/2" />
+            <p className="text-xl font-light text-black font-playfair">
+              We specialize in creative, clear, and cohesive communications
+              solutions that build memorable, impactful content.
+            </p>
           </div>
         </section>
       </main>
