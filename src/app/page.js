@@ -14,7 +14,7 @@ export default function Home() {
       {/* Navbar with Hamburger */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         <div className="text-3xl font-bold text-black font-playfair">
-          Wordin
+          WebCraftnpm
         </div>
         <div className="relative">
           <button
