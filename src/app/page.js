@@ -14,7 +14,7 @@ export default function Home() {
       {/* Navbar with Hamburger */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         <div className="text-3xl font-bold text-black font-playfair">
-          WebCraft
+          WordIn
         </div>
         <div className="relative">
           <button
@@ -38,13 +38,13 @@ export default function Home() {
       {/* Wrapper for the content */}
       <main className="max-w-screen-xl mx-auto px-4 z-10 flex-grow">
         {/* Section with grid layout */}
-        <section className="grid grid-cols-2 gap-8 min-h-[80vh]">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[80vh]">
           {/* Left Side - Mailing List */}
           <div className="flex flex-col justify-center">
             <p className="text-xl font-light text-black font-playfair mb-2">
               Mailing List
             </p>
-            <div className="flex border border-black bg-transparent w-3/4">
+            <div className="flex border border-black bg-transparent w-full md:w-3/4">
               <input
                 type="email"
                 placeholder="Your email"
@@ -71,20 +71,20 @@ export default function Home() {
 
           {/* Right Side - Text Content */}
           <div className="flex flex-col justify-center">
-            <h1 className="text-6xl font-playfair font-bold text-black leading-tight">
+            <h1 className="text-4xl md:text-6xl font-playfair font-bold text-black leading-tight">
               Plain language,
               <br />
               Extraordinary results
             </h1>
-            <hr className="border-t border-black my-6 w-1/2" />
-            <p className="text-xl font-light text-black font-playfair">
+            <hr className="border-t border-black my-6 w-full md:w-1/2" />
+            <p className="text-lg md:text-xl font-light text-black font-playfair">
               We specialize in creative, clear, and cohesive communications
               solutions that build memorable, impactful content.
             </p>
             {/* Projects Button */}
             <div className="mt-8">
               <a
-                href="#projects"
+                href="/projects"
                 className="flex items-center justify-center w-32 h-12 border border-black bg-transparent transition hover:bg-black group"
               >
                 <span className="text-black font-bold group-hover:text-white transition">
@@ -102,7 +102,7 @@ export default function Home() {
       {/* Footer Section */}
       <footer className="p-4 text-center bg-transparent">
         <p className="text-black font-playfair">
-          © 2024 WebCraft. All rights reserved.
+          © 2024 WordIn. All rights reserved.
         </p>
       </footer>
 
@@ -135,7 +135,7 @@ export default function Home() {
           </li>
           <li>
             <a
-              href="#projects"
+              href="/projects"
               className="hover:underline"
               onClick={toggleMenu}
             >
