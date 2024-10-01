@@ -14,7 +14,7 @@ export default function Home() {
       {/* Navbar with Hamburger */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         <div className="text-3xl font-bold text-black font-playfair">
-          WebCraftnpm
+          WebCraft
         </div>
         <div className="relative">
           <button
@@ -81,6 +81,17 @@ export default function Home() {
               We specialize in creative, clear, and cohesive communications
               solutions that build memorable, impactful content.
             </p>
+            {/* Projects Button */}
+            <div className="mt-8">
+              <a
+                href="#projects"
+                className="flex items-center justify-center w-32 h-12 border border-black bg-transparent transition hover:bg-black group"
+              >
+                <span className="text-black font-bold group-hover:text-white transition">
+                  Projects
+                </span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -91,7 +102,7 @@ export default function Home() {
       {/* Footer Section */}
       <footer className="p-4 text-center bg-transparent">
         <p className="text-black font-playfair">
-          © 2024 Wordin. All rights reserved.
+          © 2024 WebCraft. All rights reserved.
         </p>
       </footer>
 
