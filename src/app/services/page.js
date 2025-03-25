@@ -15,9 +15,9 @@ export default function Services() {
     <div className="min-h-screen bg-gradient-to-r from-orange-400 via-white to-green-400 relative flex flex-col">
       {/* Navbar */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
-        <div className="w-48 h-auto">
+        <a href="/" className="w-48 h-auto">
           <Image src={logo} alt="Logo" width={192} height={75} priority />
-        </div>
+        </a>
         <div className="relative">
           <button
             onClick={toggleMenu}

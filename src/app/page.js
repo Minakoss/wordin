@@ -16,9 +16,9 @@ export default function Home() {
       {/* Navbar με εικόνα αριστερά */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         {/* Αντικατάσταση WordIn με εικόνα */}
-        <div className="w-48 h-auto">
+        <a href="/" className="w-48 h-auto">
           <Image src={logo} alt="Logo" width={192} height={75} priority />
-        </div>
+        </a>
 
         <div className="relative">
           <button
