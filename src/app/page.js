@@ -42,7 +42,7 @@ export default function Home() {
           {/* Left Side - Mailing List */}
           <div className="flex flex-col justify-center">
             <p className="text-xl font-light text-black font-playfair mb-2">
-              Mailing List
+              Contact
             </p>
             <div className="flex border border-black bg-transparent w-full md:w-3/4">
               <input
@@ -102,7 +102,7 @@ export default function Home() {
       {/* Footer Section */}
       <footer className="p-4 text-center bg-transparent">
         <p className="text-black font-playfair">
-          © 2024 WordIn. All rights reserved.
+          © 2025 WordIn. All rights reserved.
         </p>
       </footer>
 
