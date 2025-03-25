@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import logo from "@/logo/logo.png"; // Εισαγωγή του λογοτύπου
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +13,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-orange-400 via-white to-green-400 relative flex flex-col">
-      {/* Navbar with Hamburger */}
+      {/* Navbar με εικόνα αριστερά */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
-        <div className="text-3xl font-bold text-black font-playfair">
-          WordIn
+        {/* Αντικατάσταση WordIn με εικόνα */}
+        <div className="w-32 h-auto">
+          <Image src={logo} alt="Logo" width={128} height={50} priority />
         </div>
+
         <div className="relative">
           <button
             onClick={toggleMenu}
@@ -42,12 +46,12 @@ export default function Home() {
           {/* Left Side - Mailing List */}
           <div className="flex flex-col justify-center">
             <p className="text-xl font-light text-black font-playfair mb-2">
-              Contact
+              Επικοινωνία
             </p>
             <div className="flex border border-black bg-transparent w-full md:w-3/4">
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="aggelosandreou83@gmail.com"
                 className="p-4 w-full border-none focus:outline-none bg-transparent text-black"
               />
               <button className="p-4 border-l border-black bg-transparent">
@@ -71,10 +75,10 @@ export default function Home() {
 
           {/* Right Side - Text Content */}
           <div className="flex flex-col justify-center">
-            <h1 className="text-4xl md:text-6xl font-playfair font-bold text-black leading-tight">
-              Plain language,
+            <h1 className="text-4xl md:text-5xl font-playfair font-bold text-black leading-tight">
+              Μία λέξη,
               <br />
-              Extraordinary results
+              χιλιες εικόνες
             </h1>
             <hr className="border-t border-black my-6 w-full md:w-1/2" />
             <p className="text-lg md:text-xl font-light text-black font-playfair">
@@ -88,7 +92,7 @@ export default function Home() {
                 className="flex items-center justify-center w-32 h-12 border border-black bg-transparent transition hover:bg-black group"
               >
                 <span className="text-black font-bold group-hover:text-white transition">
-                  Projects
+                  Υπηρεσίες
                 </span>
               </a>
             </div>
@@ -121,30 +125,22 @@ export default function Home() {
         <ul className="space-y-6 text-2xl">
           <li>
             <a href="#" className="hover:underline" onClick={toggleMenu}>
-              Home
+              Αρχική
             </a>
           </li>
           <li>
             <a
-              href="/about.js"
+              href="/services"
               className="hover:underline"
               onClick={toggleMenu}
             >
-              About
+              Υπηρεσίες
             </a>
           </li>
-          <li>
-            <a
-              href="/projects"
-              className="hover:underline"
-              onClick={toggleMenu}
-            >
-              Projects
-            </a>
-          </li>
+
           <li>
             <a href="#contact" className="hover:underline" onClick={toggleMenu}>
-              Contact
+              Επικοινωνία
             </a>
           </li>
         </ul>
