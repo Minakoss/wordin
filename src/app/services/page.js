@@ -12,11 +12,11 @@ export default function Services() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-green-400 via-white to-orange-400 relative flex flex-col">
+    <div className="min-h-screen bg-gradient-to-r from-orange-400 via-white to-green-400 relative flex flex-col">
       {/* Navbar */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
-        <div className="w-32 h-auto">
-          <Image src={logo} alt="Logo" width={128} height={50} priority />
+        <div className="w-48 h-auto">
+          <Image src={logo} alt="Logo" width={192} height={75} priority />
         </div>
         <div className="relative">
           <button

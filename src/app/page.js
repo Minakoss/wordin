@@ -12,12 +12,12 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-orange-400 via-white to-green-400 relative flex flex-col">
+    <div className="min-h-screen bg-gradient-to-r from-green-400 via-white to-orange-400 relative flex flex-col">
       {/* Navbar με εικόνα αριστερά */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         {/* Αντικατάσταση WordIn με εικόνα */}
-        <div className="w-32 h-auto">
-          <Image src={logo} alt="Logo" width={128} height={50} priority />
+        <div className="w-48 h-auto">
+          <Image src={logo} alt="Logo" width={192} height={75} priority />
         </div>
 
         <div className="relative">
@@ -76,9 +76,7 @@ export default function Home() {
           {/* Right Side - Text Content */}
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl md:text-5xl font-playfair font-bold text-black leading-tight">
-              Μία λέξη,
-              <br />
-              χιλιες εικόνες
+              Μία λέξη, Χίλιες εικόνες
             </h1>
             <hr className="border-t border-black my-6 w-full md:w-1/2" />
             <p className="text-lg md:text-xl font-light text-black font-playfair">
@@ -88,7 +86,7 @@ export default function Home() {
             {/* Projects Button */}
             <div className="mt-8">
               <a
-                href="/projects"
+                href="/services"
                 className="flex items-center justify-center w-32 h-12 border border-black bg-transparent transition hover:bg-black group"
               >
                 <span className="text-black font-bold group-hover:text-white transition">
