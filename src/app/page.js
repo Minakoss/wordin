@@ -89,7 +89,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl font-playfair font-bold text-black leading-tight">
               Μία λέξη, Χίλιες εικόνες
             </h1>
-            <hr className="border-t border-black my-6 w-full md:w-1/2" />
+            <hr className="border-t border-black my-6 w-full md:w-11/12" />
             <p className="text-lg md:text-xl font-light text-black font-playfair">
               We specialize in creative, clear, and cohesive communications
               solutions that build memorable, impactful content.
