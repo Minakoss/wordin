@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import logo from "@/logo/logo.png"; // Εισαγωγή του λογοτύπου
+import { Phone } from "lucide-react"; // Εισαγωγή του εικονιδίου
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,12 +50,16 @@ export default function Home() {
               Επικοινωνία
             </p>
             <div className="flex border border-black bg-transparent w-full md:w-3/4">
-              <input
-                type="email"
-                placeholder="aggelosandreou83@gmail.com"
+              <a
+                href="mailto:aggelosandreou83@gmail.com"
                 className="p-4 w-full border-none focus:outline-none bg-transparent text-black"
-              />
-              <button className="p-4 border-l border-black bg-transparent">
+              >
+                aggelosandreou83@gmail.com
+              </a>
+              <a
+                href="mailto:aggelosandreou83@gmail.com"
+                className="p-4 border-l border-black bg-transparent flex items-center justify-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -69,8 +74,14 @@ export default function Home() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
+            <span className="text-xl font-light text-black font-playfair mt-4">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-6 h-6 text-black" />
+                <span>6940556709</span>
+              </div>
+            </span>
           </div>
 
           {/* Right Side - Text Content */}

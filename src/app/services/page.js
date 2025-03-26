@@ -138,7 +138,7 @@ export default function Services() {
           </li>
 
           <li>
-            <a href="#contact" className="hover:underline" onClick={toggleMenu}>
+            <a href="/contact" className="hover:underline" onClick={toggleMenu}>
               Επικοινωνία
             </a>
           </li>

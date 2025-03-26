@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import logo from "@/logo/logo.png";
 
 export default function Contacts() {
@@ -13,10 +12,9 @@ export default function Contacts() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-green-400 via-white to-orange-400 relative flex flex-col">
-      {/* Navbar με εικόνα αριστερά */}
+    <div className="min-h-screen bg-gradient-to-r from-orange-400 via-white to-green-400 relative flex flex-col">
+      {/* Navbar */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
-        {/* Αντικατάσταση WordIn με εικόνα */}
         <a href="/" className="w-48 h-auto">
           <Image src={logo} alt="Logo" width={192} height={75} priority />
         </a>
@@ -27,7 +25,6 @@ export default function Contacts() {
             className="text-black focus:outline-none"
             aria-label="Toggle Menu"
           >
-            {/* Hamburger Icon */}
             <div className="space-y-2">
               <span className="block w-8 h-0.5 bg-black"></span>
               <span className="block w-8 h-0.5 bg-black"></span>
@@ -36,11 +33,13 @@ export default function Contacts() {
           </button>
         </div>
       </nav>
+      <hr className="border-t-1 border-black z-10" />
 
-      <main className="max-w-screen-xl mx-auto px-4 z-10 flex flex-col md:flex-row items-center md:items-start justify-between mt-10">
-        {/* Αριστερό τμήμα */}
-        <div className="w-full md:w-1/2 text-left">
-          <h1 className="text-6xl font-bold text-black">Contact</h1>
+      {/* Κεντρικό περιεχόμενο */}
+      <main className="max-w-screen-xl mx-auto px-4 z-10 min-h-screen flex flex-col md:flex-row items-center justify-between">
+        {/* Κείμενο αριστερά */}
+        <div className="w-full md:w-1/2 text-left self-center">
+          <h1 className="text-6xl font-bold text-black">Επικοινωνία</h1>
           <p className="text-lg text-black mt-4">
             Have a creative project in mind? Need an enthusiastic collaborator
             in your corner? Drop us a line via the contact form and we'll be in
@@ -48,8 +47,8 @@ export default function Contacts() {
           </p>
         </div>
 
-        {/* Δεξί τμήμα */}
-        <div className="w-full md:w-1/2 mt-10 md:mt-0 flex flex-col items-center">
+        {/* Φόρμα δεξιά */}
+        <div className="w-full md:w-1/2 flex flex-col items-end self-center">
           <form className="w-full max-w-lg space-y-6">
             <div>
               <label className="block text-black font-bold">Name</label>
@@ -77,7 +76,7 @@ export default function Contacts() {
                 rows="4"
               ></textarea>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-end">
               <button
                 type="submit"
                 className="border border-black px-6 py-2 text-black font-bold flex items-center"
@@ -89,11 +88,47 @@ export default function Contacts() {
         </div>
       </main>
 
+      <hr className="border-t-1 border-black" />
       <footer className="p-4 text-center bg-transparent">
         <p className="text-black font-playfair">
           © 2025 WordIn. All rights reserved.
         </p>
       </footer>
+
+      {/* Fullscreen Menu */}
+      <div
+        className={`fixed inset-0 bg-black text-white flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <button
+          onClick={toggleMenu}
+          className="absolute top-5 right-7 text-white text-4xl focus:outline-none"
+        >
+          ✕
+        </button>
+        <ul className="space-y-6 text-2xl">
+          <li>
+            <a href="/" className="hover:underline" onClick={toggleMenu}>
+              Αρχική
+            </a>
+          </li>
+          <li>
+            <a
+              href="/services"
+              className="hover:underline"
+              onClick={toggleMenu}
+            >
+              Υπηρεσίες
+            </a>
+          </li>
+          <li>
+            <a href="/contact" className="hover:underline" onClick={toggleMenu}>
+              Επικοινωνία
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
