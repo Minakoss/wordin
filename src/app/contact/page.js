@@ -42,8 +42,8 @@ export default function Contacts() {
           <h1 className="text-6xl font-bold text-black">Επικοινωνία</h1>
           <p className="text-lg text-black mt-4">
             Have a creative project in mind? Need an enthusiastic collaborator
-            in your corner? Drop us a line via the contact form and we'll be in
-            touch soon.
+            in your corner? Drop us a line via the contact form and we will be
+            in touch soon.
           </p>
         </div>
 
