@@ -40,7 +40,7 @@ export default function Contacts() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-orange-400 via-white to-green-400 relative flex flex-col">
+    <div className="min-h-screen bg-gradient-to-r from-green-400 via-white to-orange-400 relative flex flex-col">
       {/* Navbar */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         <a href="/" className="w-48 h-auto">
