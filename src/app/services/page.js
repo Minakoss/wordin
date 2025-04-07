@@ -115,7 +115,7 @@ export default function Services() {
 
       {/* Fullscreen Menu */}
       <div
-        className={`fixed inset-0 bg-black text-white flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
+        className={`fixed inset-0 bg-white/70 backdrop-blur text-black flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

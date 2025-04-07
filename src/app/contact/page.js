@@ -6,9 +6,37 @@ import logo from "@/logo/logo.png";
 
 export default function Contacts() {
   const [isOpen, setIsOpen] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xzzekakb", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
   };
 
   return (
@@ -49,13 +77,15 @@ export default function Contacts() {
 
         {/* Φόρμα δεξιά */}
         <div className="w-full md:w-1/2 flex flex-col items-end self-center">
-          <form className="w-full max-w-lg space-y-6">
+          <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-6">
             <div>
               <label className="block text-black font-bold">Name</label>
               <input
                 type="text"
-                placeholder="Enter your first name"
+                name="name"
+                placeholder="Enter your name"
                 className="w-full p-2 border border-black rounded-none bg-transparent focus:outline-none"
+                required
               />
             </div>
             <div>
@@ -64,26 +94,45 @@ export default function Contacts() {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 className="w-full p-2 border border-black rounded-none bg-transparent focus:outline-none"
+                required
               />
             </div>
             <div>
               <label className="block text-black font-bold">Message</label>
               <textarea
+                name="message"
                 placeholder="How can we help?"
                 className="w-full p-2 border border-black rounded-none bg-transparent focus:outline-none"
                 rows="4"
+                required
               ></textarea>
             </div>
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="border border-black px-6 py-2 text-black font-bold flex items-center"
+                disabled={status === "sending"}
+                className={`border border-black px-6 py-2 text-black font-bold flex items-center ${
+                  status === "sending" ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Submit <span className="ml-2">→</span>
+                {status === "sending" ? "Sending..." : "Submit"}{" "}
+                <span className="ml-2">→</span>
               </button>
             </div>
+            {/* Feedback */}
+            {status === "success" && (
+              <p className="text-green-700 font-semibold">
+                ✔ Το μήνυμα στάλθηκε με επιτυχία!
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-red-700 font-semibold">
+                ✖ Υπήρξε πρόβλημα κατά την αποστολή.
+              </p>
+            )}
           </form>
         </div>
       </main>
@@ -97,7 +146,7 @@ export default function Contacts() {
 
       {/* Fullscreen Menu */}
       <div
-        className={`fixed inset-0 bg-black text-white flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
+        className={`fixed inset-0 bg-white/70 backdrop-blur text-black flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

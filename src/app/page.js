@@ -54,7 +54,7 @@ export default function Home() {
                 href="mailto:aggelosandreou83@gmail.com"
                 className="p-4 w-full border-none focus:outline-none bg-transparent text-black"
               >
-                aggelosandreou83@gmail.com
+                aggelosandreou32@gmail.com
               </a>
               <a
                 href="mailto:aggelosandreou83@gmail.com"
@@ -121,7 +121,7 @@ export default function Home() {
 
       {/* Fullscreen Menu hamburger */}
       <div
-        className={`fixed inset-0 bg-black text-white flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
+        className={`fixed inset-0 bg-white/70 backdrop-blur text-black  flex flex-col items-center justify-center z-50 transition-transform duration-700 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
