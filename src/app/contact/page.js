@@ -118,7 +118,7 @@ export default function Contacts() {
                   status === "sending" ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
-                {status === "sending" ? "Sending..." : "Submit"}{" "}
+                {status === "sending" ? "Sending..." : "Αποστολη"}{" "}
                 <span className="ml-2">→</span>
               </button>
             </div>
