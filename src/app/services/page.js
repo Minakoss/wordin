@@ -39,6 +39,12 @@ export default function Services() {
     }
   };
 
+  const showPrev = () => {
+    if (activeParagraph > 0) {
+      setActiveParagraph((prev) => prev - 1);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-400 via-white to-orange-400 relative flex flex-col">
       {/* Navbar */}
@@ -89,17 +95,33 @@ export default function Services() {
             </div>
           ))}
 
-          {activeParagraph < servicesData.length - 1 && (
-            <div className="flex justify-center mt-4">
-              <button
-                onClick={showNext}
-                className="animate-bounce text-black text-3xl"
-                aria-label="Next"
-              >
-                ↓
-              </button>
-            </div>
-          )}
+          <div className="flex justify-between px-8 mt-4">
+            <button
+              onClick={showPrev}
+              className={`text-black text-3xl ${
+                activeParagraph === 0
+                  ? "opacity-30 cursor-not-allowed"
+                  : "animate-bounce"
+              }`}
+              disabled={activeParagraph === 0}
+              aria-label="Previous"
+            >
+              ↑
+            </button>
+
+            <button
+              onClick={showNext}
+              className={`text-black text-3xl ${
+                activeParagraph === servicesData.length - 1
+                  ? "opacity-30 cursor-not-allowed"
+                  : "animate-bounce"
+              }`}
+              disabled={activeParagraph === servicesData.length - 1}
+              aria-label="Next"
+            >
+              ↓
+            </button>
+          </div>
         </section>
 
         {/* Desktop: όλες μαζί σε grid */}

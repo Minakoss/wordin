@@ -35,7 +35,7 @@ export default function Home() {
       <hr className="border-t-1 border-black z-10" />
 
       {/* Mobile - Fullscreen Intro */}
-      <div className="md:hidden flex flex-col items-center justify-center h-screen text-center px-4 relative">
+      <div className="md:hidden flex flex-col items-center justify-start h-screen text-center px-4 pt-44 relative">
         <h1 className="text-4xl font-playfair font-bold text-black leading-tight">
           Μία λέξη, Χίλιες εικόνες
         </h1>
