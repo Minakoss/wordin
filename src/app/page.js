@@ -162,7 +162,7 @@ export default function Home() {
 
       <footer className="p-4 text-center bg-transparent">
         <p className="text-black font-playfair">
-          © 2025 WordIn. All rights reserved.
+          © 2025 WordIn. All rights reserved. Designed & Developed by weblend.gr
         </p>
       </footer>
 

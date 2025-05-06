@@ -40,7 +40,7 @@ export default function Contacts() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-green-400 via-white to-orange-400 relative flex flex-col">
+    <div className="h-screen overflow-hidden bg-gradient-to-r from-green-400 via-white to-orange-400 relative flex flex-col">
       {/* Navbar */}
       <nav className="p-6 flex justify-between items-center bg-transparent z-10">
         <a href="/" className="w-48 h-auto">
@@ -64,7 +64,7 @@ export default function Contacts() {
       <hr className="border-t-1 border-black z-10" />
 
       {/* Κεντρικό περιεχόμενο */}
-      <main className="max-w-screen-xl mx-auto px-4 z-10 min-h-screen flex flex-col md:flex-row items-center justify-between">
+      <main className="max-w-screen-xl mx-auto px-4 z-10 flex-1 flex flex-col md:flex-row items-center justify-between pt-4">
         {/* Κείμενο αριστερά */}
         <div className="w-full md:w-1/2 text-left self-center">
           <h1 className="text-6xl font-bold text-black">Επικοινωνία</h1>
@@ -74,7 +74,6 @@ export default function Contacts() {
             in touch soon.
           </p>
         </div>
-
         {/* Φόρμα δεξιά */}
         <div className="w-full md:w-1/2 flex flex-col items-end self-center">
           <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-6">
